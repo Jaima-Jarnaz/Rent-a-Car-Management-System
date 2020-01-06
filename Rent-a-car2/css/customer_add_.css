@@ -1,0 +1,57 @@
+body{}
+#h2{color: #404b56;}
+div#container {
+    width: 745px;
+    height: 450px;
+    background-color: #9e9e9e26;
+    margin: 19px;
+    padding: 40px;
+    text-align: -webkit-left;
+    margin-left: 235px;
+    border-radius: 15px;
+}
+#inputbox input,select{width: 480px;padding: 10px;background-color: #9e9e9e2e;margin: 9px;border-style: groove;font-size: 17px;}
+#inputbox select{width: 500px;padding: 10px;background-color: #9e9e9e2e;margin: 9px;border-style: groove;font-size: 17px;color: #404b56;}
+#inputbox select option{width: 500px;padding: 10px;background-color: #9e9e9e2e;margin: 9px;border-style: groove;color: #404b56;}
+#checkbox h4 {
+    font-size: 20px;
+    margin-left: 10px;
+    color:#404b56;
+}
+
+#checkbox  input{color: #404b56;}
+.button {
+   background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 9px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 12px 9px;
+    cursor: pointer;
+}
+a.button i {
+    font-size: 15px;
+    margin: 3px;
+}
+.button {
+   background-color: #4CAF50;
+   border: none;
+   color: white;
+   padding: 1px 27px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 19px;
+   margin: 5px 0px;
+   cursor: pointer;
+   margin-right: 784px;
+}
+a.button i {
+    font-size: 16px;
+    margin: 0px;
+}
+
+.backIcon a i{width: 20px;color: #505c63;margin-left: 850px;font-size: 50px;}

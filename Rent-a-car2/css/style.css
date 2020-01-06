@@ -1,0 +1,11 @@
+body{}
+.firstblock{margin: auto;background-color: #8bc34af0;width: 67%;margin-top: 60px;margin-bottom: 60px;}
+		div#container{width: 350px;/* border: groove; */margin: auto;padding: 10px;background-color:#b1a6a600;/* border: 6px solid #92a1a9e0; */}
+	    div#head h2{margin: auto;text-align: center;font-family: arial;margin-left: 21px;}
+	    #h2{padding: 5px;margin-bottom: 0px;margin-left: 30px;}
+	    #h2 i{font-size: 15px;margin-right: 4px;color: forestgreen;}
+	    div#inputbox input{padding: 10px;margin-bottom: 12px;width: 80%;margin-left: 20px;font-size: 15px;}
+	    div#submitbutton{width: 40%;padding: 8px;margin-bottom: 10px;margin-left: 170px;}
+	    div#submitbutton input{padding: 8px;width: 100%;}
+	    div#inputbox select{padding: 10px;margin-bottom: 10px;width: 87%;margin-left: 20px;font-size: 15px;}
+.fullcontainer{width: 45%;border: 2px solid #92bb7c;margin: auto;}	    

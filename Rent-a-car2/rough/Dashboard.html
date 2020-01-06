@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="file:///C:/xampp/htdocs/Rent-a-car/fontawesome-free-5.11.2-web/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+</head>
+<body>
+  <div id="nav"><h2><i class="fas fa-car"></i>BJ Company</h2></div>
+  <div id="section">
+  	<div class="sidenav">
+  <a href="*"><span><i id="i0" class="fas fa-home"></i>Dashboard</span></a>
+  <a href="car_add.html"><i id="i1" class="fas fa-car"></i>Car</a>
+  <a href="driver_add2.html"><i id="i6" class="fas fa-user-alt"></i>Driver</a>
+  <a href="#"><i id="i9" class="hvr-buzz-out fa fa-male"></i>Customer</a>
+  <a href="trip_entry.html"><i id="i2" class="far fa-plus-square"></i>Trip Entry</a>
+  <a href="#"><i id="i3" class="far fa-plus-square"></i>Local Trip Entry</a>
+  <a href="*"><span>View Section</span></a>
+  <a href="#"><i id="i4" class="fab fa-tripadvisor"></i>Trip List</a>
+  <a href="#"><i id="i5" class="fab fa-tripadvisor"></i>Local Trip List</a>
+  <a href="#" class="dropdown-btn"><i id="i7" class="fas fa-money-bill"></i>Accounting </a>
+  <div class="dropdown-container">
+    <a href="#">Rececipt Info</a>
+    <a href="#">Payment Info</a>
+    <a href="#">Account Reports</a>
+  </div>
+  <a href="#" class="dropdown-btn"><i id="i8" class="far fa-address-book"></i>Reports</a>
+   <div class="dropdown-container">
+    <a href="#">Genaral Reports</a>
+    <a href="#">Balance Sheet</a>
+    <a href="#">Company Bill</a>
+  </div>
+</div>
+<div id="main">
+	<div id="innerdiv">
+		<div id="logo">
+			<i class="fas fa-dungeon"></i>
+		</div>
+		<span><h2>Entry Section</h2></span>
+	</div>
+	<div id="innerdiv">
+		<div id="logo">
+		<i class="fas fa-eye"></i>
+		</div>
+		<span><h2>View Section</h2></span>
+	</div>
+	<div id="innerdiv">
+		<div id="logo">
+			<i class="fas fa-coins"></i>
+		</div>
+		<span><h2>Accounts</h2></span>
+	</div>
+</div>
+  	
+  </div>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+
+</body>
+</html>
