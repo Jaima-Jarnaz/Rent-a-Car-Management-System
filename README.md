@@ -1,5 +1,8 @@
 ## Rent-a-Car-Management-System(Platform-PHP,HTML,CSS,Database-mysql)
+
+
 >This project implemented for my University course.The modlues are - Car,Driver,Customer,Trip Entry,Local Trip Entry 
+
 
 >Features of this project 
 
@@ -24,6 +27,8 @@
 ![Report for total balance ](total.PNG)
 
 
-> Database  -  (db_car_bj) . For login username : mim and password : 123 (login1.php)
+
+> Database  -  (db_car_bj) . For login username : mim and password : 123 
+
 
 >[Check the video of the project which I uploaded in youtube](https://www.youtube.com/watch?v=k20KF80z4tc)
