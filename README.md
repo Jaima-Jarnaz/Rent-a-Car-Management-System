@@ -12,4 +12,8 @@
 -Single Payment generate module
 
 
-![First Look of this Project](Rent-a-Car2/front.PNG)
+![First Look of this Project](front.PNG)
+
+![Report for trip ](trip.PNG)
+
+![Report for total balance ](total.PNG)
