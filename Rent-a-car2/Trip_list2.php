@@ -54,16 +54,15 @@ th {
   <a class="bar-block-item" href="driver_list.php">       <i id="i2" class="fas fa-user-alt"></i>Driver List</a>
   <a class="bar-block-item" href="Trip_list2.php">                      <i id="i6" class="fab fa-tripadvisor"></i>Trip List</a>
   <a class="bar-block-item" href="local_trip_list.php">                      <i id="i7" class="fab fa-tripadvisor"></i>Local Trip List</a>
-  <a href="#" class="bar-block-item dropdown-btn">         <i id="i8" class="fas fa-money-bill"></i>Accounting </a>
-  <div class="dropdown-container bar-block-item">
-    <a class="bar-block-item dropdown-btn" href="#">Rececipt Info</a>
-    <a class="bar-block-item dropdown-btn" href="payment_view.php">Payment Info</a>
-  </div>
-  <a href="#" class="bar-block-item dropdown-btn">         <i id="i9" class="far fa-address-book"></i>Reports</a>
-   <div class="dropdown-container bar-block-item">
-    <a class="bar-block-item dropdown-btn" href="report2.php">Genaral Reports</a>
-    <a class="bar-block-item dropdown-btn" href="#">Company Bill</a>
-  </div>
+  <div class="dropdown">
+      <a href="#" class="bar-block-item dropdown-btn dropdown-toggle " data-bs-toggle="dropdown" id="dropdownMenuButton1">         <i id="i8" class="fas fa-money-bill"></i>Reports</a>
+      <div class="dropdown-container bar-block-item dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <a class="bar-block-item dropdown-btn dropdown-item" href="report2.php">Trip Reports</a>
+        <a class="bar-block-item dropdown-btn dropdown-item" href="report3.php">Local Trip Reports</a>
+        <a class="bar-block-item dropdown-btn dropdown-item" href="total_balance.php">Total Balance Sheet</a>
+        <a class="bar-block-item dropdown-btn dropdown-item" href="payment_view.php">Payment Info</a>
+      </div>
+    </div>
   </div>
 </nav>
 <!-- !PAGE CONTENT! -->

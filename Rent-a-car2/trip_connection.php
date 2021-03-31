@@ -12,8 +12,8 @@ else
 {
 	echo"";
 }
-$sql="INSERT INTO tb_trip(TripType,DriverName,CarRegistrationNo,TripDate,ContactRate,Advance,StartPoint,EndPoint)
-VALUES('$_POST[field1]','$_POST[field2]','$_POST[field3]','$_POST[field4]','$_POST[field5]','$_POST[field6]','$_POST[field7]',
+$sql="INSERT INTO tb_trip(TripType,DriverName,Passenger_Name,CarRegistrationNo,TripDate,ContactRate,Advance,StartPoint,EndPoint)
+VALUES('$_POST[field1]','$_POST[field2]','$_POST[passenger]','$_POST[field3]','$_POST[field4]','$_POST[field5]','$_POST[field6]','$_POST[field7]',
 '$_POST[field8]')";
 if(mysqli_query($conn,$sql))
 {

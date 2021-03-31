@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="file:///C:/xampp/htdocs/Rent-a-car/fontawesome-free-5.11.2-web/css/all.css">
-  <link rel="stylesheet" type="text/css" href="css/car_list.css">
- <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-   <script src="https://kit.fontawesome.com/3b71e37289.js"></script>
-	<title>Payment Information List</title>
+	<title>Dashboard</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="file:///C:/xampp/htdocs/Rent-a-car/fontawesome-free-5.11.2-web/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+ 
+
+  <script src="https://kit.fontawesome.com/3b71e37289.js"></script>
+</head>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+table {
+ font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+}
+
+tr:nth-child(even){background-color: #9e9e9e42;}
+tr:hover {background-color: #ddd;}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
 </head>
 <body>
-<div class="wrapper">
+	<!-- Top container -->
+<div class="wrapper container-fluid">
 	<!-- Sidebar/menu -->
 <nav class="" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="c1-container">
@@ -58,15 +84,16 @@
     	 <img src="img/logo4.png" style="width: 80px">
     </div>
   </header>
+
 <hr>
-<div class="add_car_container">
- <div class="save-button" id="addcar">
-<a href="payment_add.php" class="button">Add Payment</a>
-</div>
-</div>
+ <div class="">
+  <div class="btn btn-success">
+       <a href="report_all_print.php" class="buttonlink">Print</a>
+  </div>
+  </div> 
 
-
-
+<br>
+<br>
 
 <?php
 $servername = "localhost";
@@ -75,57 +102,85 @@ $password = "";
 $dbname = "db_car_bj";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-} 
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+//$sql ="SELECT tb_trip.TripType,tb_trip.DriverName,tb_trip.Passenger_Name,tb_trip.CarRegistrationNo,tb_trip.TripDate,tb_trip.ContactRate,tb_trip.Advance,tb_trip.StartPoint,tb_trip.EndPoint,
+//tb_local_trip.TripType,tb_local_trip.DriverName,tb_local_trip.Passenger_Name,tb_local_trip.CarRegistrationNo,tb_trip.TripDate,tb_local_trip.ContactRate,tb_local_trip.Advance,tb_local_trip.StartPoint,tb_local_trip.EndPoint  
+//////FROM tb_trip  INNER JOIN tb_local_trip
+//ON ";
 
-$sql = "SELECT * FROM tb_payment";
-$result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    echo"<table style='width:990px; margin:auto; color:#314954; padding:5px; font-size:15px; border-color:darkgrey;border: currentColor;background-color: #d8dbe845;' border='5'>";
-    echo"<tr><th colspan='8'><h1>Payment Records</h1></th></tr>";
-    echo"<tr>";
-    echo"<td><h2>Payment Date</h2></td>";
-    echo "<td><h2>Customer Name</h2></td>";
-    echo "<td><h2>Payment Type</h2></td>";
-    echo "<td><h2>Amount</h2></td>";
-    echo "<td><h2>Description</h2></td>";
-    echo "<td><h2>Delete</h2></td>";
-    echo "<td><h2>Update</h2></td>";
-    echo "<td><h2>Print</h2></td>";
+
+$sql ="SELECT * FROM tb_local_trip ";
+
+$result = mysqli_query($conn, $sql);
+
+$query="select sum(ContactRate) as 'sumcontact' from tb_local_trip";
+$res=mysqli_query($conn,$query);
+$data=mysqli_fetch_array($res);
+
+
+
+if (mysqli_num_rows($result) > 0) 
+{
+  echo "<center>";
+  echo "<table align=center><tr>
+        <th>Trip Type</th>
+        <th>Date</th>
+        <th>DriverName</th>
+        <th>CarRegistrationNo</th>
+        <th>StartPoint</th>
+        <th>EndPoint</th>
+        <th>ContactRate</th>
+        <th>Advance</th>
+        </tr>";
+    // output data of each row
+   while($row = mysqli_fetch_array($result)) 
+   {
+    echo "<tr>
+    <td>".$row["TripType"]."</td>
+    <td>".$row["TripDate"]."</td>
+    <td>".$row["DriverName"]."</td>
+    <td>".$row["CarRegistrationNo"]."</td>
+    <td>".$row["StartPoint"]."</td>
+    <td>".$row["EndPoint"]."</td>
+    <td>".$row["ContactRate"]."</td>
+    <td>".$row["Advance"]."</td>";
     echo "</tr>";
-    echo "<br><br>";
-     //<table><tr><th>Name</th><th>ID</th></tr>";
-     // output data of each row
-     while($row = $result->fetch_assoc()) {
-        echo "<tr>
-    <td>"  . $row["PaymentDate"]."    </td>
-    <td>"  . $row["CustomerName"]."  </td>
-    <td>"  . $row["PaymentType"]."    </td>
-    <td>"  . $row["Amount"]."  </td>
-    <td>"  . $row["Description"]."  </td>
-    <td><a href =delete_payment.php?CustomerName=".$row["CustomerName"].">Delete</a>     </td>
-    <td><a href =edit_payment.php?CustomerName=".$row["CustomerName"].">Update</a>     </td>
-    <td><a href =print_payment.php?CustomerName=".$row["CustomerName"].">Print</a> </td>
-    </tr>";
-     }
-     echo "</table>";
-} else {
-     echo "0 results";
+    }
+    echo "</table>";
+    echo "</center>";
+}
+else 
+{
+    echo "0 results";
 }
 
-$conn->close();
-?>  <br><br><br><br><br><br><br>
-</table>
+mysqli_close($conn);
+?>
+<div class="total_block">
+    <div class="span">
+      <div class="total">&nbsp;Total Contact Rate:&nbsp;<?php   echo "".$data['sumcontact']; ?></div>
+    </div>
+  </div>
 
+<br> <br>
 <!-- Footer -->
-<div class="footer">
-  <h4 style="color: green;font-size: 24px">@BJ Company</h4></div>
+<footer>
+  <div class="footer container-fluid">
+    <h4 style="color: green;font-size: 24px">@BJ Company</h4>
+  </div>
+</footer>
 </div>
 </div>
+  <!-- End page content -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 
 
 <script>

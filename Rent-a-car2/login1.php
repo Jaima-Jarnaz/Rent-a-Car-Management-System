@@ -13,7 +13,7 @@
 		<form action="login_action.php" method="post">
 		<div id="h2"><h2><i class="fa fa-lock green"></i>Admin Log In</h2></div>
 		<div id="inputbox"><input   type="text" name="user_name" placeholder="user_name"></div>
-		<div id="inputbox"><input   type="text" name="password" placeholder="Password"></div>
+		<div id="inputbox"><input   type="password" name="password" placeholder="Password"></div>
     	<div id="inputbox">
     </div>
 		<div id="submitbutton"><input type="submit" value="LOGIN" name="submit"></div>

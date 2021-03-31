@@ -1,53 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Add Trip Entry</title>
-	<link rel="stylesheet" type="text/css" href="file:///C:/xampp/htdocs/Rent-a-car/fontawesome-free-5.11.2-web/css/all.css">
-	<link rel="stylesheet" type="text/css" href="css/tripentry.css">
-	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
-	<script src="https://kit.fontawesome.com/3b71e37289.js"></script>
-</head>
-<body>
-
-<div class="wrapper">
-	<!-- Sidebar/menu -->
-<nav class="" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="c1-container">
-    <div class="c1-img">
-      <img src="img/img_avatar.png" style="border-radius: 50%;width: 46px;">
-    </div>
-    <div class="c1-text">
-      <span>Welcome, <strong>Admin</strong></span><br>
-    </div>
-  </div>
-  <hr>
-  <div class="c1-container">
-  <a class="bar-block-item" href="Dashboard2.php"><i id="i0" class="fas fa-home"></i>Dashboard</a>
-  </div>
-  <div class="bar-block">
-  <a class="bar-block-item" href="car_add.php">           <i id="i1" class="fas fa-car"></i>Car</a>
-  <a class="bar-block-item" href="driver_add2.php">       <i id="i2" class="fas fa-user-alt"></i>Driver</a>
-  <a class="bar-block-item" href="customer_add.php">      <i id="i3" class="hvr-buzz-out fa fa-male"></i>Customer</a>
-  <a class="bar-block-item" href="trip_entry.php">        <i id="i4" class="far fa-plus-square"></i>Trip Entry</a>
-  <a class="bar-block-item" href="localtripentry.php">    <i id="i5" class="far fa-plus-square"></i>Local Trip Entry</a>
-  <a class="bar-block-item" href="*"><span>View Section</span></a>
-  <a class="bar-block-item" href="car_list.php">           <i id="i1" class="fas fa-car"></i>Car List</a>
-  <a class="bar-block-item" href="customer_list.php">           <i id="i1" class="fas fa-car"></i>Customer List</a>
-  <a class="bar-block-item" href="driver_list.php">       <i id="i2" class="fas fa-user-alt"></i>Driver List</a>
-  <a class="bar-block-item" href="Trip_list2.php">                      <i id="i6" class="fab fa-tripadvisor"></i>Trip List</a>
-  <a class="bar-block-item" href="local_trip_list.php">                      <i id="i7" class="fab fa-tripadvisor"></i>Local Trip List</a>
-  <a href="#" class="bar-block-item dropdown-btn">         <i id="i8" class="fas fa-money-bill"></i>Accounting </a>
-  <div class="dropdown-container bar-block-item">
-    <a class="bar-block-item dropdown-btn" href="#">Rececipt Info</a>
-    <a class="bar-block-item dropdown-btn" href="payment_view.php">Payment Info</a>
-  </div>
-  <a href="#" class="bar-block-item dropdown-btn">         <i id="i9" class="far fa-address-book"></i>Reports</a>
-   <div class="dropdown-container bar-block-item">
-    <a class="bar-block-item dropdown-btn" href="report2.php">Genaral Reports</a>
-    <a class="bar-block-item dropdown-btn" href="#">Company Bill</a>
-  </div>
-  </div>
-</nav>
+<?php include("nav.php")?>
 <!-- !PAGE CONTENT! -->
 <div class="main">
   <!-- Header -->
@@ -82,7 +33,15 @@
 		</div>
 		<div class="row">
 			<div class="col-25">
-				<label for="field3">Car Registration No</label>
+				<label for="field2">Passenger Name</label>
+			</div>
+			<div class="col-75">
+				  <input type="text" id="drivername" name="passenger" placeholder="Passenger Name">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label for="field3">CarRegistrationNo</label>
 			</div>
 			<div class="col-75">
 				  <input  name="field3" type="text" placeholder="Car Registration No">
@@ -128,7 +87,6 @@
 				 <input type="text" id="endpoint" name="field8" placeholder="End Point">
 			</div>
 		</div>
-		<h2>Trip Expence</h2>
 		<hr>
 		<div id="save-button"><input  class="button" type="submit" value="Submit"></div>
 	</form>

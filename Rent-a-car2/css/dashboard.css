@@ -53,11 +53,10 @@ html{box-sizing: content-box;}
 }
 
 
-
 .main{background-color: #3b3e400d;margin-left:25%;width: 85%;margin-left: 5px;/* margin-top:43px; */}
+
 .innerdiv{
-    width: 23%;
-    padding: 40px;
+    padding: 82px;
     float: left;
     margin: 9px;
 }

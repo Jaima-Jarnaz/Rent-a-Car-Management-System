@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2019 at 06:42 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.0.31
+-- Generation Time: Mar 31, 2021 at 07:55 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -135,7 +135,9 @@ CREATE TABLE `tb_local_trip` (
 --
 
 INSERT INTO `tb_local_trip` (`TripType`, `DriverName`, `CarRegistrationNo`, `TripDate`, `ContactRate`, `Advance`, `StartPoint`, `EndPoint`) VALUES
-('tytu', 'tyutyu', 6786, 79797, 789, 7979, 'khk', 'ggh');
+('tytu', 'tyutyu', 6786, 79797, 789, 7979, 'khk', 'ggh'),
+('Local', 'monir', 2201, 1, 2000, 1000, 'Tongi', 'Noakhali'),
+('Local', 'Khairul', 2202, 1, 1000, 500, 'Tongi', 'Mirpur');
 
 -- --------------------------------------------------------
 
@@ -167,6 +169,7 @@ INSERT INTO `tb_payment` (`PaymentDate`, `CustomerName`, `PaymentType`, `Amount`
 CREATE TABLE `tb_trip` (
   `TripType` varchar(30) NOT NULL,
   `DriverName` varchar(20) NOT NULL,
+  `Passenger_Name` varchar(300) NOT NULL,
   `CarRegistrationNo` int(30) NOT NULL,
   `TripDate` varchar(30) NOT NULL,
   `ContactRate` int(30) NOT NULL,
@@ -179,8 +182,11 @@ CREATE TABLE `tb_trip` (
 -- Dumping data for table `tb_trip`
 --
 
-INSERT INTO `tb_trip` (`TripType`, `DriverName`, `CarRegistrationNo`, `TripDate`, `ContactRate`, `Advance`, `StartPoint`, `EndPoint`) VALUES
-('double', 'emran mia', 14, '28.11.2019', 2000, 1000, 'uttora', 'mohamadpur');
+INSERT INTO `tb_trip` (`TripType`, `DriverName`, `Passenger_Name`, `CarRegistrationNo`, `TripDate`, `ContactRate`, `Advance`, `StartPoint`, `EndPoint`) VALUES
+('Double', 'monir', 'Koli', 123, '31-03-2021', 2000, 1000, 'Uttora', 'Sadarghat'),
+('Signle', 'Alam', 'Karim', 1214, '31-03-2021', 1000, 500, 'Tongi', 'Chowrasta'),
+('Double', 'Rahim', 'Zawad', 1215, '31-03-2021', 2000, 1000, 'Uttora', 'Saddarghat'),
+('Double', 'Babu mia', 'Mehrab', 1206, '01-04-2021', 1500, 500, 'Uttora', 'Mirpur');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
